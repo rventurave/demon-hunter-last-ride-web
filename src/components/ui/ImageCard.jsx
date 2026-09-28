@@ -24,7 +24,7 @@ export default function ImageCard({ item, index, onOpen, label = "ESCENA" }) {
           {item.title}
           <ArrowUpRight size={18} />
         </h3>
-        <p>{item.description}</p>
+        {item.description && <p>{item.description}</p>}
       </div>
     </button>
   );

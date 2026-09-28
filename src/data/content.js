@@ -15,34 +15,14 @@ export const project = {
   hero: "assets/images/hero.jpg",
   demo: true,
 };
-export const story = [
-  {
-    number: "01",
-    title: "Un viaje hacia lo desconocido.",
-    text: "En una noche oscura, un cazador debe atravesar peligrosos caminos sobre una antigua carreta tirada por caballos. La oscuridad esconde criaturas que intentarán detener el viaje.",
-    detail:
-      "Sobre la carreta permanecen cuatro velas encendidas. Estas llamas representan la posibilidad de completar el recorrido.",
-    image: "assets/images/story-01.jpg",
-    caption: "EL CAMINO · LA ÚNICA SALIDA ES SEGUIR",
-  },
-  {
-    number: "02",
-    title: "La oscuridad no viaja sola.",
-    text: "Pequeños demonios aparecen desde diferentes puntos del camino. Algunos atacan directamente al cazador; otros intentan subir a la carreta. Las criaturas que se aferran aumentan su peso y reducen progresivamente su velocidad.",
-    detail:
-      "Pero existe una amenaza aún mayor: un enorme demonio persigue constantemente la carreta desde la oscuridad.",
-    image: "assets/images/story-02.jpg",
-    caption: "LA AMENAZA · NUNCA MIRES ATRÁS",
-  },
-  {
-    number: "03",
-    title: "Mientras quede una llama.",
-    text: "Defiéndete con tus armas, elimina a las criaturas que se aferran al vehículo y utiliza tus látigos para mantener a los caballos avanzando.",
-    detail:
-      "Alcanza el destino con al menos una vela encendida para sobrevivir. Si todas las velas se apagan o la vida del cazador llega a cero, el viaje habrá terminado.",
-    image: "assets/images/story-03.jpg",
-    caption: "LA ESPERANZA · CUATRO LLAMAS, UNA OPORTUNIDAD",
-  },
+export const storyNarrative = [
+  "En una región montañosa y aislada, un cazador emprende un peligroso viaje en una carreta tirada por dos caballos. Para llegar a su destino debe atravesar un antiguo bosque, un lugar del que existen historias sobre criaturas que atacan a quienes intentan cruzarlo.",
+  "Al principio, el camino parece tranquilo, pero poco a poco comienzan a aparecer monstruos entre los árboles. Algunas criaturas vuelan alrededor de la carreta, mientras otras corren detrás de ella y tratan de sujetarse a sus costados. Cada enemigo que logra aferrarse aumenta el peso del vehículo, haciendo que los caballos avancen más lentamente.",
+  "El cazador debe defenderse mientras la carreta continúa en movimiento. Utiliza su espada para eliminar a los monstruos que se acercan y evita que permanezcan demasiado tiempo sobre el vehículo. Al mismo tiempo, debe controlar a los caballos y utilizar los látigos para impulsarlos cuando la velocidad comienza a disminuir.",
+  "Conforme avanza por el bosque, los ataques se vuelven cada vez más intensos. Entonces aparece una criatura mucho más grande que las demás. Este enorme monstruo comienza a perseguir la carreta desde atrás, avanzando lentamente pero sin detenerse. Si el cazador pierde demasiada velocidad, la criatura puede acercarse peligrosamente.",
+  "A partir de ese momento, el viaje se convierte en una carrera por sobrevivir. El cazador debe equilibrar sus acciones entre combatir a los enemigos, mantener la carreta ligera y hacer que los caballos continúen corriendo. Cada segundo cuenta, porque cualquier descuido puede permitir que los monstruos lo alcancen.",
+  "Después de enfrentarse a numerosos enemigos y escapar de la gran criatura que lo perseguía, el cazador finalmente consigue abandonar el bosque. Frente a él aparece un paisaje tranquilo entre montañas, señal de que ha superado el peligro.",
+  "Su objetivo siempre fue uno solo: sobrevivir al recorrido y llegar con vida al final del camino.",
 ];
 export const development = [
   [

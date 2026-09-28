@@ -58,7 +58,7 @@ export default function Modal({ value, onClose, onChange }) {
         role="dialog"
         aria-modal="true"
         aria-labelledby="lightbox-title"
-        aria-describedby="lightbox-description"
+        aria-describedby={item.description ? "lightbox-description" : undefined}
         ref={dialog}
       >
         <div className="lightbox-top">
@@ -89,7 +89,7 @@ export default function Modal({ value, onClose, onChange }) {
           </button>
           <div aria-live="polite">
             <h3 id="lightbox-title">{item.title}</h3>
-            <p id="lightbox-description">{item.description}</p>
+            {item.description && <p id="lightbox-description">{item.description}</p>}
           </div>
           <button
             className="text-button"

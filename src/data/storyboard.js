@@ -1,28 +1,20 @@
-export const storyboard = [
-  [
-    "El inicio del viaje",
-    "El cazador se prepara en una carreta iluminada por cuatro velas.",
-  ],
-  [
-    "Un camino incierto",
-    "Los caballos avanzan mientras el bosque oculta las primeras amenazas.",
-  ],
-  [
-    "El primer encuentro",
-    "Las criaturas aparecen y el jugador debe defenderse.",
-  ],
-  [
-    "Un peso inesperado",
-    "Los demonios se adhieren a la carreta y reducen su velocidad.",
-  ],
-  ["La gran amenaza", "Un enorme demonio surge detrás del vehículo."],
-  [
-    "La última llama",
-    "El destino se alcanza si queda al menos una vela encendida.",
-  ],
-].map(([title, description], i) => ({
+const scenes = [
+  "El cazador inicia su viaje por un bosque peligroso.",
+  "Criaturas voladoras comienzan a rodear la carreta.",
+  "Los monstruos logran acercarse y atacar al cazador.",
+  "El cazador responde utilizando su espada.",
+  "Más criaturas se aferran a la carreta y dificultan el avance.",
+  "Una amenaza mucho más grande aparece detrás de la carreta.",
+  "El cazador intenta escapar mientras el monstruo lo persigue.",
+  "Los caballos aceleran para alejarse del peligro.",
+  "El cazador utiliza los látigos para aumentar la velocidad.",
+  "El monstruo gigante logra acercarse peligrosamente.",
+  "El cazador exige un último esfuerzo a los caballos para escapar.",
+  "Finalmente, el cazador logra salir del bosque y llegar a un lugar seguro.",
+];
+export const storyboard = scenes.map((description, i) => ({
   id: i + 1,
-  title,
-  description,
-  image: `assets/images/storyboard/storyboard-0${i + 1}.jpg`,
+  title: description,
+  description: "",
+  image: `assets/images/storyboard/${i}.jpeg`,
 }));

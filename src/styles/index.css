@@ -506,108 +506,23 @@ button {
   background: #c99a4520;
   transform: translateY(-2px);
 }
-.story-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 70px;
-  align-items: center;
-  margin-top: 60px;
+.story-narrative {
+  max-width: 880px;
 }
-.story-row.reverse .story-image {
-  order: 2;
+.story-narrative p {
+  font-size: 14px;
+  line-height: 1.95;
+  color: #b6b8ad;
 }
-.story-image {
-  position: relative;
-  min-width: 0;
+.story-narrative p + p {
+  margin-top: 19px;
 }
-.story-image > .media {
-  aspect-ratio: 1.42;
-  border: 1px solid #ffffff14;
-}
-.story-image img {
-  object-position: 80% center;
-}
-.story-row:nth-child(3) .story-image img {
-  transform: scale(1.4);
-  filter: brightness(0.65) hue-rotate(320deg);
-}
-.story-row:nth-child(4) .story-image img {
-  transform: scale(1.6);
-  filter: sepia(0.25);
-}
-.image-caption {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: linear-gradient(transparent, #080808e8);
-  padding: 45px 22px 20px;
-  font-size: 8px;
-  color: #c4b792;
-  letter-spacing: 1.5px;
-  pointer-events: none;
-}
-.story-image .media-label {
-  top: 12px;
-  bottom: auto;
-  z-index: 1;
-}
-.chapter {
-  color: var(--gold);
-  font-size: 9px;
-  letter-spacing: 2px;
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  margin-bottom: 19px;
-}
-.chapter span {
-  height: 1px;
-  width: 55px;
-  background: #c99a4544;
-}
-.story-text h3 {
+.story-lead {
   font-family: Cinzel, Georgia, serif;
-  font-size: 26px;
-  font-weight: 400;
-  line-height: 1.45;
-  margin-bottom: 20px;
-}
-.story-text p {
-  font-size: 13px;
-  margin-top: 13px;
-}
-.candles {
-  display: flex;
-  gap: 15px;
-  align-items: center;
-  margin-top: 28px;
-}
-.candles > span {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  gap: 3px;
-}
-.flame {
-  width: 5px;
-  height: 9px;
-  border-radius: 80% 20% 65% 40%;
-  background: #f0bd65;
-  box-shadow: 0 0 12px #c99a45;
-  animation: flicker 3s infinite alternate;
-}
-.candle {
-  display: block;
-  width: 6px;
-  height: 17px;
-  background: #9d8c65;
-}
-.candles small {
-  font-size: 8px;
-  color: #9d9075;
-  letter-spacing: 1px;
-  margin-left: 6px;
+  font-size: clamp(19px, 2.1vw, 25px);
+  line-height: 1.62;
+  color: #dccca6;
+  letter-spacing: 0.1px;
 }
 .mechanics-grid {
   display: grid;
@@ -1403,16 +1318,6 @@ footer {
     opacity: 1;
   }
 }
-@keyframes flicker {
-  from {
-    opacity: 0.6;
-    transform: rotate(-8deg);
-  }
-  to {
-    opacity: 1;
-    transform: rotate(8deg);
-  }
-}
 @supports (animation-timeline: scroll()) {
   .scroll-hint {
     animation: fade-scroll linear both;
@@ -1458,9 +1363,6 @@ footer {
   }
   .hero h1 {
     font-size: 64px;
-  }
-  .story-row {
-    gap: 40px;
   }
   .mechanics-grid {
     grid-template-columns: repeat(3, 1fr);
@@ -1609,30 +1511,6 @@ footer {
   }
   .section-tip {
     display: none;
-  }
-  .story-row {
-    gap: 28px;
-    margin-top: 42px;
-  }
-  .story-text h3 {
-    font-size: 23px;
-  }
-  .story-text p {
-    font-size: 12px;
-  }
-  .story-image > .media {
-    aspect-ratio: 3/4;
-  }
-  .image-caption {
-    font-size: 7px;
-    padding-inline: 13px;
-  }
-  .candles {
-    flex-wrap: wrap;
-  }
-  .candles small {
-    width: 100%;
-    margin: 7px 0 0;
   }
   .mechanics-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -1825,32 +1703,11 @@ footer {
     font-size: 12px;
     margin-top: 12px;
   }
-  .story-row {
-    grid-template-columns: 1fr;
-    gap: 25px;
-    margin-top: 35px;
+  .story-lead {
+    font-size: 18px;
   }
-  .story-row.reverse .story-image {
-    order: 0;
-  }
-  .story-image > .media {
-    aspect-ratio: 16/11;
-  }
-  .story-text h3 {
-    font-size: 24px;
-    margin-bottom: 15px;
-  }
-  .story-text p {
+  .story-narrative p {
     font-size: 13px;
-  }
-  .candles small {
-    width: auto;
-    margin: 0 0 0 5px;
-    font-size: 7px;
-  }
-  .chapter {
-    font-size: 8px;
-    margin-bottom: 12px;
   }
   .mechanics-grid {
     grid-template-columns: 1fr;
@@ -2173,9 +2030,6 @@ footer {
 .footer-bottom small {
   color: #a0a598;
 }
-.image-caption {
-  font-size: 9px;
-}
 .mechanic-top > span {
   color: #a2a798;
 }
@@ -2196,9 +2050,6 @@ footer {
   }
   .hero-content > .eyebrow {
     letter-spacing: 1.25px;
-  }
-  .image-caption {
-    font-size: 8px;
   }
   .media-label {
     font-size: 8px;

@@ -1,0 +1,11 @@
+# Taste — general preferences
+- Escribe las peticiones en español y espera la respuesta (incluido el resumen final) en español. Confidence: 0.75
+- Al terminar una tarea espera un resumen breve que liste: archivos modificados, recursos usados, orden/estructura aplicada y las decisiones de diseño importantes. Confidence: 0.7
+- Suele redactar las peticiones como especificaciones largas y estructuradas (objetivo, requisitos, "muy importante", verificación final). Confidence: 0.6
+- Prefiere reutilizar los recursos existentes del proyecto antes que generar, descargar o usar imágenes externas. Confidence: 0.7
+- Cuando se usan assets existentes, respeta el orden por nombre/numeración de los archivos y no los renombra ni copia sin necesidad. Confidence: 0.65
+- Pide explícitamente inspeccionar la estructura del proyecto e identificar los archivos relevantes antes de modificar código. Confidence: 0.7
+- No eliminar archivos o estilos que puedan usar otras partes del proyecto; los cambios deben ser de alcance acotado y no romper header, footer, navegación ni otras secciones. Confidence: 0.7
+- Exige verificación final: rutas correctas sin 404, imágenes que carguen y conserven proporción (object-fit sin deformar), responsive correcto, sin overflow horizontal y sin errores de consola. Confidence: 0.7
+- Valora que los cambios mantengan coherencia con el estilo/diseño profesional ya existente y elijan la alternativa que mejor encaje con él. Confidence: 0.65
+- Proporciona el texto/copy exacto (párrafos de relato, descripciones de escenas) y espera que se use tal cual, sin reinterpretarlo ni inventar contenido adicional. Confidence: 0.6

@@ -22,16 +22,16 @@ test("navigation, accessible mechanics, lightbox keyboard and focus restoration"
   await mechanic.click();
   await expect(page.locator("#mechanic-0")).toBeHidden();
   const scene = page.getByRole("button", {
-    name: "Ampliar escena 1: El inicio del viaje",
+    name: "Ampliar escena 1: El cazador inicia su viaje por un bosque peligroso.",
   });
   await scene.click();
   await expect(page.getByRole("dialog")).toBeVisible();
-  await expect(page.locator(".lightbox-count")).toHaveText("1 / 6");
+  await expect(page.locator(".lightbox-count")).toHaveText("1 / 12");
   await page.keyboard.press("ArrowRight");
-  await expect(page.locator(".lightbox-count")).toHaveText("2 / 6");
+  await expect(page.locator(".lightbox-count")).toHaveText("2 / 12");
   await page.keyboard.press("ArrowLeft");
   await page.keyboard.press("ArrowLeft");
-  await expect(page.locator(".lightbox-count")).toHaveText("6 / 6");
+  await expect(page.locator(".lightbox-count")).toHaveText("12 / 12");
   await page.keyboard.press("Tab");
   await page.keyboard.press("Tab");
   await page.keyboard.press("Tab");
@@ -93,7 +93,9 @@ for (const width of [320, 390, 768, 1440])
       await expect(toggle).toBeFocused();
     }
     await page
-      .getByRole("button", { name: "Ampliar escena 1: El inicio del viaje" })
+      .getByRole("button", {
+        name: "Ampliar escena 1: El cazador inicia su viaje por un bosque peligroso.",
+      })
       .click();
     expect(
       await page.evaluate(
