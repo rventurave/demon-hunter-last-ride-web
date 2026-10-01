@@ -1,5 +1,45 @@
 import { test, expect } from "@playwright/test";
 
+test("user tests remain visible when opening, closing and switching panels", async ({
+  page,
+}) => {
+  await page.goto("/");
+  const cards = page.locator(".user-test-card");
+  const first = cards.nth(0);
+  const second = cards.nth(1);
+  await first.scrollIntoViewIfNeeded();
+  await expect(first).toHaveCSS("opacity", "1");
+  await first.getByRole("button", { expanded: true }).click();
+  await expect(first.locator(".user-test-head")).toHaveAttribute(
+    "aria-expanded",
+    "false",
+  );
+  await expect(first).toHaveCSS("opacity", "1");
+  await first.locator(".user-test-head").click();
+  await expect(first.locator(".user-test-head")).toHaveAttribute(
+    "aria-expanded",
+    "true",
+  );
+  await expect(first).toHaveCSS("opacity", "1");
+  await second.scrollIntoViewIfNeeded();
+  await expect(second).toHaveCSS("opacity", "1");
+  await second.locator(".user-test-head").click();
+  await expect(second.locator(".user-test-head")).toHaveAttribute(
+    "aria-expanded",
+    "true",
+  );
+  await expect(second.locator(".user-test-collapse")).not.toHaveAttribute(
+    "inert",
+  );
+  await expect(first.locator(".user-test-head")).toHaveAttribute(
+    "aria-expanded",
+    "false",
+  );
+  await expect(first).toHaveCSS("opacity", "1");
+  await expect(second).toHaveCSS("opacity", "1");
+  await expect(cards).toHaveCount(7);
+});
+
 test("navigation, accessible mechanics, lightbox keyboard and focus restoration", async ({
   page,
 }) => {
@@ -113,11 +153,10 @@ test("missing media remains explicit and does not request nonexistent assets", a
   });
   await page.goto("/");
   await page.locator("#proyecto").scrollIntoViewIfNeeded();
-  await expect(page.locator("video")).toHaveCount(0);
+  await expect(page.locator("video")).toHaveCount(7);
   await expect(
     page.getByRole("button", { name: "VIDEO PENDIENTE" }),
-  ).toHaveCount(4);
-  await expect(page.getByText("Documentación de ejemplo.")).toBeVisible();
+  ).toHaveCount(3);
   expect(missing).toEqual([]);
 });
 test("reduced motion and skip navigation", async ({ page }) => {
@@ -135,13 +174,11 @@ test("reduced motion and skip navigation", async ({ page }) => {
     ),
   ).toBe("auto");
 });
-test("only one video plays at a time across gameplay and user tests", async ({
-  page,
-}) => {
+test("only one gameplay video plays at a time", async ({ page }) => {
   const paths = [
     "assets/videos/gameplay-01.mp4",
     "assets/videos/gameplay-02.mp4",
-    "assets/videos/tests/user-01.mp4",
+    "assets/videos/gameplay-03.mp4",
   ];
   await page.route("**/*virtual:media*", (route) =>
     route.fulfill({
@@ -158,13 +195,14 @@ test("only one video plays at a time across gameplay and user tests", async ({
   await page.goto("/");
   const videos = page.locator("video");
   await expect(videos).toHaveCount(3);
+  const playing = page.locator(".video-card.is-playing");
   await videos.nth(0).evaluate((v) => v.play());
-  await expect(page.locator(".video-card.is-playing")).toHaveCount(1);
+  await expect(playing).toHaveCount(1);
   await videos.nth(1).evaluate((v) => v.play());
   expect(await videos.nth(0).evaluate((v) => v.paused)).toBe(true);
   await videos.nth(2).evaluate((v) => v.play());
   expect(await videos.nth(1).evaluate((v) => v.paused)).toBe(true);
-  await expect(page.locator(".video-card.is-playing")).toHaveCount(1);
+  await expect(playing).toHaveCount(1);
   await videos.nth(2).evaluate((v) => v.pause());
-  await expect(page.locator(".video-card.is-playing")).toHaveCount(0);
+  await expect(playing).toHaveCount(0);
 });

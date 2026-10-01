@@ -6,7 +6,7 @@ export default function SectionTitle({
   children,
 }) {
   return (
-    <div className="section-heading">
+    <div className="section-heading" data-reveal>
       <div>
         <div className="eyebrow">
           <span>{number} /</span> {eyebrow}

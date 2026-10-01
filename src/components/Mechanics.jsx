@@ -36,6 +36,8 @@ export default function Mechanics() {
               <article
                 key={item.title}
                 className={`mechanic-card ${active ? "selected" : ""}`}
+                data-reveal
+                style={{ "--reveal-delay": `${(i % 4) * 60}ms` }}
               >
                 <button
                   aria-expanded={active}

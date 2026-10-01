@@ -11,7 +11,11 @@ export default function DevelopmentTimeline() {
       />
       <ol className="development-timeline">
         {development.map(([title, description], i) => (
-          <li key={title}>
+          <li
+            key={title}
+            data-reveal
+            style={{ "--reveal-delay": `${(i % 4) * 60}ms` }}
+          >
             <span className="timeline-number">
               {String(i + 1).padStart(2, "0")}
             </span>

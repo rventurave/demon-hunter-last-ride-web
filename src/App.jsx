@@ -13,7 +13,11 @@ import Gallery from "./components/Gallery";
 import ProjectInfo from "./components/ProjectInfo";
 import Footer from "./components/Footer";
 import Modal from "./components/ui/Modal";
+import BackToTop from "./components/BackToTop";
+import CursorLabel from "./components/CursorLabel";
+import useRevealObserver from "./hooks/useRevealObserver";
 export default function App() {
+  useRevealObserver();
   const [lightbox, setLightbox] = useState(null);
   const opener = useRef(null);
   const open = useCallback((items, index, title) => {
@@ -59,8 +63,10 @@ export default function App() {
           <ProjectInfo />
         </main>
         <Footer />
+        <BackToTop />
       </div>
       {lightbox && <Modal value={lightbox} onClose={close} onChange={change} />}
+      <CursorLabel />
     </>
   );
 }

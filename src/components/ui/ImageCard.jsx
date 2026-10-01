@@ -1,11 +1,19 @@
 import { Expand, ArrowUpRight } from "lucide-react";
 import Media from "./Media";
-export default function ImageCard({ item, index, onOpen, label = "ESCENA" }) {
+export default function ImageCard({
+  item,
+  index,
+  onOpen,
+  label = "ESCENA",
+  ...rest
+}) {
   return (
     <button
       className="image-card"
       onClick={onOpen}
+      data-cursor="VIEW"
       aria-label={`Ampliar ${label.toLowerCase()} ${index + 1}: ${item.title}`}
+      {...rest}
     >
       <div className="image-card-picture">
         <Media src={item.image} alt={item.title} />

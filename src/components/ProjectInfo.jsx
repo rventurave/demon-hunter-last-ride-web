@@ -7,7 +7,7 @@ export default function ProjectInfo() {
       data-nav="proyecto"
       className="section container project-info"
     >
-      <div>
+      <div data-reveal>
         <span className="eyebrow">08 / DETRÁS DE LA EXPERIENCIA</span>
         <h2>Project info</h2>
         <p>
@@ -19,7 +19,7 @@ export default function ProjectInfo() {
         </span>
         <Code2 className="project-symbol" size={115} strokeWidth={0.7} />
       </div>
-      <dl>
+      <dl data-reveal style={{ "--reveal-delay": "80ms" }}>
         {technical.map(([label, value]) => (
           <div key={label}>
             <dt>{label}</dt>

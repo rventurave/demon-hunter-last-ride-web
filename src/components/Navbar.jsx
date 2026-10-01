@@ -41,14 +41,14 @@ export default function Navbar() {
         <a
           className="brand"
           href="#inicio"
-          aria-label="Japanese Demon Hunter, inicio"
+          aria-label="Demon Hunter: Last Ride, inicio"
           onClick={() => setOpen(false)}
         >
           <Mark />
           <span>
-            JAPANESE
+            DEMON HUNTER
             <br />
-            <strong>DEMON HUNTER</strong>
+            <strong>LAST RIDE</strong>
           </span>
         </a>
         <button

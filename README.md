@@ -1,4 +1,4 @@
-# Japanese Demon Hunter — VR Experience
+# Demon Hunter: Last Ride — VR Experience
 
 Sitio responsive de presentación y documentación de un prototipo VR. React 19, Vite, Lucide y CSS adaptable, sin backend. Tipografías Cinzel e Inter alojadas localmente. Las animaciones usan CSS; no se necesita una librería adicional.
 
@@ -30,7 +30,7 @@ Los textos iniciales y la configuración están separados de la interfaz:
 | `src/data/mechanics.js`  | Mecánicas y detalles expandibles                                     |
 | `src/data/storyboard.js` | Escenas, descripciones e imágenes                                    |
 | `src/data/gameplay.js`   | Videos de gameplay y miniaturas                                      |
-| `src/data/userTests.js`  | Sesiones, observaciones, problemas, mejoras, métricas y hallazgos    |
+| `src/data/userTests.js`  | Las 7 pruebas de usuario (título, problema, feedback y video)        |
 
 **No se han proporcionado imágenes, grabaciones ni resultados reales.** La ilustración vectorial de ambiente es original y conceptual; no representa una captura del juego. Las pruebas y métricas vienen marcadas como ejemplos mediante `project.demo: true`. Sustituye las evidencias y los datos antes de cambiar este valor a `false`.
 
@@ -44,10 +44,10 @@ public/assets/
     gameplay-01.jpg … gameplay-03.jpg
     storyboard/storyboard-01.jpg … storyboard-06.jpg
     gallery/game-01.jpg … game-04.jpg
-    tests/user-01.jpg
   videos/
     gameplay-01.mp4 … gameplay-03.mp4
-    tests/user-01.mp4
+  video/pruebaUsers/
+    1.mp4 … 7.mp4
 ```
 
 Las rutas en los datos se escriben **sin `public/` y sin barra inicial**, por ejemplo `assets/videos/gameplay-01.mp4`. También se admiten URLs HTTPS; estas dependen del servidor externo.

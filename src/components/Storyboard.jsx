@@ -26,6 +26,8 @@ export default function Storyboard({ onOpen }) {
             item={item}
             index={i}
             onOpen={() => onOpen(storyboard, i, "Storyboard")}
+            data-reveal
+            style={{ "--reveal-delay": `${(i % 3) * 70}ms` }}
           />
         ))}
       </div>

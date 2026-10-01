@@ -13,14 +13,14 @@ export default function Hero() {
         showLabel={false}
       />
       <div className="hero-shade" />
-      <div className="hero-content container">
+      <div className="hero-content container hero-seq">
         <div className="eyebrow">
           <span className="live-dot" /> UNA EXPERIENCIA DE SUPERVIVENCIA VR
         </div>
         <h1>
-          JAPANESE
+          DEMON HUNTER
           <br />
-          <span>DEMON HUNTER</span>
+          <span>LAST RIDE</span>
         </h1>
         <p className="hero-tagline">
           Sobrevive al camino.

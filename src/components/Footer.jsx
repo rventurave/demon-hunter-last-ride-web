@@ -8,9 +8,9 @@ export default function Footer() {
           <a href="#inicio" className="brand">
             <Mark />
             <span>
-              JAPANESE
+              DEMON HUNTER
               <br />
-              <strong>DEMON HUNTER</strong>
+              <strong>LAST RIDE</strong>
             </span>
           </a>
           <span className="eyebrow">THE DARKNESS IS ONLY THE BEGINNING.</span>
@@ -20,9 +20,9 @@ export default function Footer() {
         </div>
         <div className="footer-bottom">
           <span>
-            © 2026 Japanese Demon Hunter · VR Experience
+            © 2026 Demon Hunter: Last Ride · VR Experience
             <br />
-            <small>Proyecto académico. Nombre provisional.</small>
+            <small>Proyecto académico.</small>
           </span>
           <nav aria-label="Enlaces del pie de página">
             <a href="#historia">Historia</a>

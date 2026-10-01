@@ -8,21 +8,52 @@ export const navItems = [
   ["storyboard", "Storyboard"],
   ["gameplay", "Gameplay"],
   ["pruebas", "Pruebas"],
+  ["resultados", "Mejoras"],
   ["proyecto", "Proyecto"],
 ];
 export const project = {
-  title: "Japanese Demon Hunter",
+  title: "Demon Hunter: Last Ride",
   hero: "assets/images/hero.jpg",
   demo: true,
 };
-export const storyNarrative = [
-  "En una región montañosa y aislada, un cazador emprende un peligroso viaje en una carreta tirada por dos caballos. Para llegar a su destino debe atravesar un antiguo bosque, un lugar del que existen historias sobre criaturas que atacan a quienes intentan cruzarlo.",
-  "Al principio, el camino parece tranquilo, pero poco a poco comienzan a aparecer monstruos entre los árboles. Algunas criaturas vuelan alrededor de la carreta, mientras otras corren detrás de ella y tratan de sujetarse a sus costados. Cada enemigo que logra aferrarse aumenta el peso del vehículo, haciendo que los caballos avancen más lentamente.",
-  "El cazador debe defenderse mientras la carreta continúa en movimiento. Utiliza su espada para eliminar a los monstruos que se acercan y evita que permanezcan demasiado tiempo sobre el vehículo. Al mismo tiempo, debe controlar a los caballos y utilizar los látigos para impulsarlos cuando la velocidad comienza a disminuir.",
-  "Conforme avanza por el bosque, los ataques se vuelven cada vez más intensos. Entonces aparece una criatura mucho más grande que las demás. Este enorme monstruo comienza a perseguir la carreta desde atrás, avanzando lentamente pero sin detenerse. Si el cazador pierde demasiada velocidad, la criatura puede acercarse peligrosamente.",
-  "A partir de ese momento, el viaje se convierte en una carrera por sobrevivir. El cazador debe equilibrar sus acciones entre combatir a los enemigos, mantener la carreta ligera y hacer que los caballos continúen corriendo. Cada segundo cuenta, porque cualquier descuido puede permitir que los monstruos lo alcancen.",
-  "Después de enfrentarse a numerosos enemigos y escapar de la gran criatura que lo perseguía, el cazador finalmente consigue abandonar el bosque. Frente a él aparece un paisaje tranquilo entre montañas, señal de que ha superado el peligro.",
-  "Su objetivo siempre fue uno solo: sobrevivir al recorrido y llegar con vida al final del camino.",
+export const storyStages = [
+  {
+    title: "El viaje comienza",
+    paragraphs: [
+      "En una región montañosa y aislada, un cazador emprende un peligroso viaje en una carreta tirada por dos caballos. Para llegar a su destino debe atravesar un antiguo bosque, un lugar del que existen historias sobre criaturas que atacan a quienes intentan cruzarlo.",
+    ],
+  },
+  {
+    title: "La noche cae",
+    paragraphs: [
+      "Al principio, el camino parece tranquilo, pero poco a poco comienzan a aparecer monstruos entre los árboles. Algunas criaturas vuelan alrededor de la carreta, mientras otras corren detrás de ella y tratan de sujetarse a sus costados. Cada enemigo que logra aferrarse aumenta el peso del vehículo, haciendo que los caballos avancen más lentamente.",
+    ],
+  },
+  {
+    title: "Los demonios atacan",
+    paragraphs: [
+      "El cazador debe defenderse mientras la carreta continúa en movimiento. Utiliza su espada para eliminar a los monstruos que se acercan y evita que permanezcan demasiado tiempo sobre el vehículo. Al mismo tiempo, debe controlar a los caballos y utilizar los látigos para impulsarlos cuando la velocidad comienza a disminuir.",
+    ],
+  },
+  {
+    title: "La gran amenaza",
+    paragraphs: [
+      "Conforme avanza por el bosque, los ataques se vuelven cada vez más intensos. Entonces aparece una criatura mucho más grande que las demás. Este enorme monstruo comienza a perseguir la carreta desde atrás, avanzando lentamente pero sin detenerse. Si el cazador pierde demasiada velocidad, la criatura puede acercarse peligrosamente.",
+    ],
+  },
+  {
+    title: "Una carrera por sobrevivir",
+    paragraphs: [
+      "A partir de ese momento, el viaje se convierte en una carrera por sobrevivir. El cazador debe equilibrar sus acciones entre combatir a los enemigos, mantener la carreta ligera y hacer que los caballos continúen corriendo. Cada segundo cuenta, porque cualquier descuido puede permitir que los monstruos lo alcancen.",
+    ],
+  },
+  {
+    title: "Sobrevive hasta el destino",
+    paragraphs: [
+      "Después de enfrentarse a numerosos enemigos y escapar de la gran criatura que lo perseguía, el cazador finalmente consigue abandonar el bosque. Frente a él aparece un paisaje tranquilo entre montañas, señal de que ha superado el peligro.",
+      "Su objetivo siempre fue uno solo: sobrevivir al recorrido y llegar con vida al final del camino.",
+    ],
+  },
 ];
 export const development = [
   [

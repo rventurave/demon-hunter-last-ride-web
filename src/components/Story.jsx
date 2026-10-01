@@ -1,5 +1,6 @@
 import SectionTitle from "./ui/SectionTitle";
-import { storyNarrative } from "../data/content";
+import { storyParagraphs } from "../data/story";
+
 export default function Story() {
   return (
     <section id="historia" data-nav="historia" className="section container">
@@ -7,13 +8,10 @@ export default function Story() {
         number="01"
         eyebrow="EL MUNDO QUE TE ESPERA"
         title="La historia"
-        description="Un camino, un bosque y una sola oportunidad de llegar con vida."
       />
-      <div className="story-narrative">
-        {storyNarrative.map((paragraph, i) => (
-          <p key={i} className={i === 0 ? "story-lead" : undefined}>
-            {paragraph}
-          </p>
+      <div className="story-narrative" data-reveal>
+        {storyParagraphs.map((text) => (
+          <p key={text}>{text}</p>
         ))}
       </div>
     </section>

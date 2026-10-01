@@ -23,6 +23,8 @@ export default function Gallery({ onOpen }) {
               index={i}
               label="CAPTURA"
               onOpen={() => onOpen(gallery, i, "Galería")}
+              data-reveal
+              style={{ "--reveal-delay": `${(i % 4) * 70}ms` }}
             />
           ))}
         </div>

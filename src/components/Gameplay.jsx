@@ -17,7 +17,14 @@ export default function Gameplay() {
         />
         <div className="video-grid">
           {gameplay.map((item, index) => (
-            <VideoCard key={item.id} item={item} index={index} />
+            <VideoCard
+              key={item.id}
+              item={item}
+              index={index}
+              showPlayOverlay
+              data-reveal
+              style={{ "--reveal-delay": `${index * 70}ms` }}
+            />
           ))}
         </div>
         <p className="section-footnote">
