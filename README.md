@@ -29,7 +29,7 @@ Los textos iniciales y la configuración están separados de la interfaz:
 | `src/data/content.js`    | Portada, historia, galería, cronología, ficha técnica y modo ejemplo |
 | `src/data/mechanics.js`  | Mecánicas y detalles expandibles                                     |
 | `src/data/storyboard.js` | Escenas, descripciones e imágenes                                    |
-| `src/data/gameplay.js`   | Videos de gameplay y miniaturas                                      |
+| `src/data/gameplay.js`   | Video de gameplay y funcionalidades clave                            |
 | `src/data/userTests.js`  | Las 7 pruebas de usuario (título, problema, feedback y video)        |
 
 **No se han proporcionado imágenes, grabaciones ni resultados reales.** La ilustración vectorial de ambiente es original y conceptual; no representa una captura del juego. Las pruebas y métricas vienen marcadas como ejemplos mediante `project.demo: true`. Sustituye las evidencias y los datos antes de cambiar este valor a `false`.
@@ -41,11 +41,10 @@ public/assets/
   images/
     hero.jpg
     story-01.jpg … story-03.jpg
-    gameplay-01.jpg … gameplay-03.jpg
     storyboard/storyboard-01.jpg … storyboard-06.jpg
     gallery/game-01.jpg … game-04.jpg
-  videos/
-    gameplay-01.mp4 … gameplay-03.mp4
+  video/
+    gameplay.mp4
   video/pruebaUsers/
     1.mp4 … 7.mp4
 ```

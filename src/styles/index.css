@@ -292,7 +292,7 @@ button {
   z-index: -3;
 }
 .hero-art img {
-  object-position: 62% center;
+  object-position: center;
 }
 .hero-shade {
   position: absolute;
@@ -708,11 +708,6 @@ button {
   object-position: 20% center;
   filter: brightness(0.75);
 }
-.video-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 23px;
-}
 .video-card {
   min-width: 0;
   border: 1px solid var(--line);
@@ -1083,26 +1078,6 @@ button {
   font-size: 11px;
   margin-top: 10px;
 }
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
-}
-.gallery-grid .image-card-text {
-  padding: 17px;
-}
-.gallery-grid .image-card-text h3 {
-  font-size: 13px;
-}
-.gallery-grid .image-card-text p {
-  display: none;
-}
-.gallery-grid .image-card-picture .media {
-  aspect-ratio: 1/1;
-}
-.gallery-grid .media-label {
-  font-size: 7px;
-}
 .project-info {
   display: grid;
   grid-template-columns: 1fr 1.25fr;
@@ -1321,9 +1296,6 @@ footer {
   .hero {
     height: 870px;
   }
-  .hero-art img {
-    object-position: center 56%;
-  }
   .hero-content {
     padding-top: 45px;
   }
@@ -1375,12 +1347,6 @@ footer {
   }
   .project-info {
     gap: 60px;
-  }
-  .gallery-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .gallery-grid .image-card-picture .media {
-    aspect-ratio: 16/10;
   }
   .footer-top > .eyebrow {
     display: none;
@@ -1452,9 +1418,6 @@ footer {
   .hero h1 {
     font-size: clamp(42px, 8.6vw, 65px);
   }
-  .hero-art img {
-    object-position: 65% center;
-  }
   .hero-shade {
     background:
       linear-gradient(90deg, #080b09e8, #080b0960),
@@ -1507,9 +1470,6 @@ footer {
   .storyboard-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
-  }
-  .video-grid {
-    grid-template-columns: 1fr;
   }
   .video-card:not(.compact) {
     display: grid;
@@ -1648,9 +1608,6 @@ footer {
     right: 15px;
     font-size: 17px;
     color: #c3bea327;
-  }
-  .hero-art img {
-    object-position: 72% center;
   }
   .hero-shade {
     background:
@@ -1847,13 +1804,6 @@ footer {
     font-size: 12px;
     margin-top: 7px;
   }
-  .gallery-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-  .gallery-grid .image-card-text h3 {
-    font-size: 16px;
-  }
   .project-info {
     grid-template-columns: 1fr;
     gap: 30px;
@@ -2035,9 +1985,6 @@ footer {
   }
   .hero-platform {
     letter-spacing: 0.8px;
-  }
-  .gallery-grid .media-label {
-    font-size: 8px;
   }
 }
 
@@ -2448,7 +2395,7 @@ footer {
   animation: media-shimmer 1.6s ease-in-out 3;
 }
 
-/* --- Gameplay: portada + botón Play --- */
+/* --- Reproductores de video --- */
 .video-card {
   transition:
     opacity 0.5s ease,
@@ -2460,53 +2407,6 @@ footer {
   border-color: #c99a4566;
   transform: translateY(-3px);
   box-shadow: 0 12px 30px #00000055;
-}
-.video-cover {
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 16px;
-  padding: 24px;
-  text-align: center;
-  cursor: pointer;
-}
-.video-cover-bg {
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background-size: cover;
-  background-position: center;
-  transition: transform 0.6s ease;
-}
-.video-card:hover .video-cover-bg {
-  transform: scale(1.05);
-}
-.video-cover-play {
-  width: 72px;
-  height: 72px;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  background: #982c27;
-  color: #fff1e6;
-  border: 1px solid #c9766a;
-  box-shadow: 0 8px 24px #00000066;
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease,
-    background 0.2s ease;
-}
-.video-cover:hover .video-cover-play,
-.video-cover:focus-visible .video-cover-play {
-  transform: scale(1.08);
-  background: #b13a31;
-  box-shadow:
-    0 10px 30px #00000088,
-    0 0 24px #9a272355;
 }
 
 /* --- Pruebas con usuarios: acordeón desplegable --- */
@@ -2713,7 +2613,136 @@ footer {
   }
   .video-card:hover,
   .back-to-top,
-  .cursor-label {
+  .cursor-label,
+  .feature-card:hover,
+  .feature-card:hover .feature-icon {
     transition: none !important;
+  }
+}
+
+/* --- Gameplay: reproductor único y reseña de funcionalidades --- */
+.gameplay-showcase {
+  position: relative;
+}
+.gameplay-showcase .video-card,
+.gameplay-showcase .video-card:not(.compact) {
+  display: block;
+  border-color: #c99a4530;
+  box-shadow: 0 26px 60px #00000055;
+}
+.gameplay-showcase .video-card:hover {
+  transform: none;
+  border-color: #c99a4566;
+}
+.gameplay-showcase .video-card .video-frame,
+.gameplay-showcase .video-card:not(.compact) .video-frame {
+  aspect-ratio: 16/9;
+  height: auto;
+  min-height: 0;
+}
+.gameplay-showcase .video-info {
+  padding: 24px 26px 26px;
+}
+.gameplay-showcase .video-info h3 {
+  font-size: 20px;
+  color: #e7ddc5;
+}
+.gameplay-showcase .video-info p {
+  max-width: 760px;
+}
+.gameplay-features {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  margin-top: 42px;
+}
+.feature-card {
+  position: relative;
+  overflow: hidden;
+  background: #161816;
+  border: 1px solid var(--line);
+  padding: 24px 22px;
+  min-height: 178px;
+  transition:
+    opacity 0.5s ease,
+    transform 0.28s ease,
+    border-color 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease;
+}
+.feature-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+  background: radial-gradient(130% 90% at 100% 0%, #c99a4516, transparent 62%);
+  transition: opacity 0.3s ease;
+}
+.feature-card:hover {
+  transform: translateY(-4px);
+  border-color: #c99a4566;
+  background: #1b1d18;
+  box-shadow: 0 14px 32px #00000055;
+}
+.feature-card:hover::after {
+  opacity: 1;
+}
+.feature-icon {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  margin-bottom: 20px;
+  border: 1px solid #c99a4533;
+  background: #c99a450d;
+  color: var(--gold);
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    background 0.25s ease,
+    color 0.25s ease;
+}
+.feature-card:hover .feature-icon {
+  transform: translateY(-2px) scale(1.05);
+  border-color: #c99a4588;
+  background: #c99a4514;
+  color: #efc574;
+}
+.feature-card h3 {
+  font-size: 15px;
+  color: #e7ddc5;
+}
+.feature-card p {
+  font-size: 12.5px;
+  line-height: 1.7;
+  margin-top: 9px;
+  color: #a8a8a8;
+}
+@media (max-width: 1150px) {
+  .gameplay-features {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 800px) {
+  .gameplay-features {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .gameplay-showcase .video-card .video-frame,
+  .gameplay-showcase .video-card:not(.compact) .video-frame {
+    aspect-ratio: 16/10;
+  }
+}
+@media (max-width: 520px) {
+  .gameplay-features {
+    grid-template-columns: 1fr;
+    gap: 13px;
+  }
+  .feature-card {
+    min-height: unset;
+    padding: 22px;
+  }
+  .gameplay-showcase .video-info {
+    padding: 20px;
   }
 }

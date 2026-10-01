@@ -7,7 +7,7 @@ export default function Hero() {
     <section id="inicio" data-nav="inicio" className="hero">
       <Media
         src={project.hero}
-        alt="Una carreta iluminada atraviesa un bosque japonés oscuro bajo la luna"
+        alt="Un trineo tirado por caballos avanza de noche por un bosque nevado hacia una ciudad al fondo"
         className="hero-art"
         eager
         showLabel={false}

@@ -13,7 +13,7 @@ export const navItems = [
 ];
 export const project = {
   title: "Demon Hunter: Last Ride",
-  hero: "assets/images/hero.jpg",
+  hero: "assets/images/portada.png",
   demo: true,
 };
 export const storyStages = [
@@ -80,14 +80,3 @@ export const technical = [
   ["Género", "Supervivencia / Acción / Terror"],
   ["Estado", "Prototipo en desarrollo"],
 ];
-export const gallery = [
-  "El camino entre las sombras",
-  "La carreta del cazador",
-  "Criaturas de la oscuridad",
-  "Las últimas llamas",
-].map((title, i) => ({
-  id: i + 1,
-  title,
-  description: "Captura del prototipo pendiente de incorporar.",
-  image: `assets/images/gallery/game-0${i + 1}.jpg`,
-}));

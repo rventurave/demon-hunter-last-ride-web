@@ -9,7 +9,6 @@ import Gameplay from "./components/Gameplay";
 import UserTesting from "./components/UserTesting";
 import TestingResults from "./components/TestingResults";
 import DevelopmentTimeline from "./components/DevelopmentTimeline";
-import Gallery from "./components/Gallery";
 import ProjectInfo from "./components/ProjectInfo";
 import Footer from "./components/Footer";
 import Modal from "./components/ui/Modal";
@@ -59,7 +58,6 @@ export default function App() {
           <UserTesting />
           <TestingResults />
           <DevelopmentTimeline />
-          <Gallery onOpen={open} />
           <ProjectInfo />
         </main>
         <Footer />

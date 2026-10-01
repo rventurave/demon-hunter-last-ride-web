@@ -1,6 +1,34 @@
+import {
+  Headset,
+  Navigation,
+  Zap,
+  TrendingDown,
+  Sword,
+  Ghost,
+  Weight,
+  Skull,
+  Route,
+  Orbit,
+  HeartPulse,
+  Trophy,
+} from "lucide-react";
 import SectionTitle from "./ui/SectionTitle";
 import VideoCard from "./ui/VideoCard";
-import { gameplay } from "../data/gameplay";
+import { gameplayVideo, gameplayFeatures } from "../data/gameplay";
+const icons = {
+  Headset,
+  Navigation,
+  Zap,
+  TrendingDown,
+  Sword,
+  Ghost,
+  Weight,
+  Skull,
+  Route,
+  Orbit,
+  HeartPulse,
+  Trophy,
+};
 export default function Gameplay() {
   return (
     <section
@@ -13,19 +41,29 @@ export default function Gameplay() {
           number="04"
           eyebrow="DENTRO DE LA EXPERIENCIA"
           title="Gameplay"
-          description="Observa algunas de las principales mecánicas implementadas en el prototipo."
+          description="Un vistazo al recorrido y a las funcionalidades que sostienen la experiencia."
         />
-        <div className="video-grid">
-          {gameplay.map((item, index) => (
-            <VideoCard
-              key={item.id}
-              item={item}
-              index={index}
-              showPlayOverlay
-              data-reveal
-              style={{ "--reveal-delay": `${index * 70}ms` }}
-            />
-          ))}
+        <div className="gameplay-showcase" data-reveal>
+          <VideoCard item={gameplayVideo} showPoster={false} />
+        </div>
+        <div className="gameplay-features">
+          {gameplayFeatures.map((feature, index) => {
+            const Icon = icons[feature.icon];
+            return (
+              <article
+                key={feature.title}
+                className="feature-card"
+                data-reveal
+                style={{ "--reveal-delay": `${(index % 4) * 70}ms` }}
+              >
+                <span className="feature-icon" aria-hidden="true">
+                  <Icon size={24} />
+                </span>
+                <h3>{feature.title}</h3>
+                <p>{feature.description}</p>
+              </article>
+            );
+          })}
         </div>
         <p className="section-footnote">
           Sin reproducción automática. Tú decides cuándo entrar en la
